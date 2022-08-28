@@ -1,5 +1,16 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seenNumbers = new Set(); 
+  for (const number of array) {
+    const complement = target - number;
+
+    // .has r
+    if (seenNumbers.has(complement)) return true;
+
+    // .add adds the number to the Set
+    seenNumbers.add(number);
+  }
+  return false;
 }
 
 /* 
@@ -8,10 +19,23 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  initialize an empty Set
+  iterate through the array 
+  initialize complement 
+  add number to the set
+  return true if the Set includes the complement
+  else return false
+
 */
 
 /*
   Add written explanation of your solution here
+  initialize an empty Set to store number gone through from the array
+  iterate through the array 
+  initialize complement by subtracting a number inthe array from the target
+  add number to the set
+  return true if the Set includes the complement, else return false
+
 */
 
 // You can run `node index.js` to view these console logs
